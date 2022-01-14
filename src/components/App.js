@@ -2,7 +2,8 @@ import React, { useState, useCallback } from "react";
 import { Box, Container, Heading, Stack, Text, Button } from "@chakra-ui/react";
 import { useDropzone } from "react-dropzone";
 import Papa from "papaparse";
-import Nav from "./Nav";
+import Nav from "../Nav";
+import LineChartContainer from "./LineChart";
 
 export default function CallToActionWithIllustration() {
   const [data, setData] = useState([]);
@@ -30,7 +31,6 @@ export default function CallToActionWithIllustration() {
   return (
     <>
       <Nav />
-
       <Container maxW={"5xl"}>
         <Stack
           textAlign={"center"}
@@ -67,6 +67,14 @@ export default function CallToActionWithIllustration() {
             </div>
           </Box>
         </Stack>
+      </Container>
+      <Container
+        minHeight={"3xl"}
+        minWidth={"8xl"}
+        width={"3xl"}
+        height={"3xl"}
+      >
+        <LineChartContainer data={data} />
       </Container>
     </>
   );
